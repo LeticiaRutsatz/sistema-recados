@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Criar Conta</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="body" id="form">
+    <main class="containercadastro">
+        <h2>Cadastre-se</h2>
+        <form id='formularioLogin' class="form">
+            <input type="text" name="user" id="usernameCadastro" class="username" placeholder="Enter your Username" autofocus required oninvalid="this.setCustomValidity('Preencha seu nome de usuário')" 
+            onchange="try{setCustomValidity('')}catch(e){}">
+            <br>
+            <input type="password" name="password" id="passwordCadastro" class="password" placeholder="Enter your Password" required oninvalid="this.setCustomValidity('Preencha sua senha com no mínimo 5 caracteres e no máximo 8')" 
+            onchange="try{setCustomValidity('')}catch(e){}" minlength="5" maxlength="10">
+            <br>
+            <input type="password" name="password" id="repetpassword" class="repetpassword" placeholder="Repeat your Password" required oninvalid="this.setCustomValidity('Repita sua senha')" 
+            onchange="try{setCustomValidity('')}catch(e){}" minlength="5" maxlength="10">
+            <br>
+            <input type="submit" value="Criar conta" id="buttonCadastro" class="button">
+        </form>
+        <br>
+        <a href="./index.html"  rel="Página de Cadastro">Logue na Conta</a>
+    </main>
+    <script src="./JS/cadastro.js"></script>
+</body>
+</html>
