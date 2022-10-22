@@ -36,13 +36,14 @@ botaoSair.addEventListener('click', () => {
 } )
  
 function salvarRecados(){
-    recadoHTML = {
+    const recadoHTML = {
         id: Math.floor((Math.random()*1004.75)+ 7),
         descricao: descricao.value,
         detalhamento: detalhamento.value
     }
  
     usuarioLogadoOn.recados.push(recadoHTML)
+
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogadoOn))
     criarRecados(usuarioLogadoOn)
 
@@ -99,6 +100,7 @@ function criarRecados(usuariolog){
         linhaTr.appendChild(botaoEditar);
         linhaTr.appendChild(botaoExcluir)
         tbody.appendChild(linhaTr)
+
     });
 
 }
@@ -115,21 +117,23 @@ function editarRecados(dado, editar, excluir){
     
     excluir.addEventListener('click', () => {
         editar.innerText = 'Editar'
+        editar.setAttribute('style', 'background: #F55E08')
         excluir.innerText = 'Excluir'
+        excluir.setAttribute('style', 'background: #F55E08')
     })
+
 }
 
 function atualizar(dados, editar, excluir){
 
-    const recadoAtualizado = {
+    const indexRecado = usuarioLogadoOn.recados.findIndex((dado) => dado.id === dados.id )
+    console.log(indexRecado)
+
+    let recadoAtualizado = {
         id: dados.id,
         descricao: descricao.value,
         detalhamento: detalhamento.value,
     }
-
-    const indexRecado = usuarioLogadoOn.recados.findIndex((recado) => {
-        return recado.id
-    })
 
     usuarioLogadoOn.recados[indexRecado] = recadoAtualizado
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogadoOn))

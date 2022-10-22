@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+textarea:focus, input:focus {
+    box-shadow: 0 0 5px 5px  #dddddd;
+    outline: 0;
+}
+
 .body {
     background: linear-gradient(222.96deg, #CA1154 1.65%, #E23C2A 51.25%, #F55E08 83.75%);   
     min-height: 100vh;
@@ -107,7 +112,7 @@ h1, h2 {
 }
 
 .buttonRecadosSair {
-    background: #fe1d04;
+    background: linear-gradient(222.96deg, #CA1154 1.65%, #E23C2A 51.25%, #F55E08 83.75%);
     padding: 8px;
     width: 120px;
     color: #ffff;
