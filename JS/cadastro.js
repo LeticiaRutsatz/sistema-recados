@@ -15,12 +15,39 @@ function cadastrarUsuario () {
 
     const existeUsuario = usuarios.some((dado) => dado.nome === userName.value )
     if (existeUsuario){
-        alert("Este nome de usuário já existe!")
+
+        const espaco = document.getElementById('espacoAlert')
+
+        const alertContaCriada = document.createElement('div')
+        alertContaCriada.setAttribute('class', 'alert alert-danger alert-dismissible fade show')
+        const conteudoContaCriada = document.createElement('strong')
+        conteudoContaCriada.innerText = 'Este nome de usuário já existe!'
+        const buttonFechar = document.createElement('button')
+        buttonFechar.setAttribute('class', 'btn-close')
+        buttonFechar.setAttribute('data-bs-dismiss', 'alert')
+        buttonFechar.setAttribute('id', 'fecharAlert')
+
+        alertContaCriada.appendChild(conteudoContaCriada)
+        alertContaCriada.appendChild(buttonFechar)
+        espaco.appendChild(alertContaCriada)
         return
     }
 
     if (password.value !== passwordRepet.value){
-        alert("Digite as senhas iguais")
+        const espaco = document.getElementById('espacoAlert')
+
+        const alertContaCriada = document.createElement('div')
+        alertContaCriada.setAttribute('class', 'alert alert-danger alert-dismissible fade show')
+        const conteudoContaCriada = document.createElement('strong')
+        conteudoContaCriada.innerText = 'Digite as senhas iguais!'
+        const buttonFechar = document.createElement('button')
+        buttonFechar.setAttribute('class', 'btn-close')
+        buttonFechar.setAttribute('data-bs-dismiss', 'alert')
+        buttonFechar.setAttribute('id', 'fecharAlert')
+
+        alertContaCriada.appendChild(conteudoContaCriada)
+        alertContaCriada.appendChild(buttonFechar)
+        espaco.appendChild(alertContaCriada)
         return
     }
 
@@ -32,8 +59,26 @@ function cadastrarUsuario () {
     usuarios.push(usuario)
     localStorage.setItem('dadosFormulario', JSON.stringify(usuarios))
 
-    alert("Conta Criada com Sucesso!")
-    window.location.href = "index.html"
+    const espaco = document.getElementById('espacoAlert')
+
+    const alertContaCriada = document.createElement('div')
+    alertContaCriada.setAttribute('class', 'alert alert-success alert-dismissible fade show')
+    const conteudoContaCriada = document.createElement('strong')
+    conteudoContaCriada.innerText = 'Conta criada com sucesso!'
+    const conteudoExtra = document.createElement('p')
+    conteudoExtra.innerText = 'Clique no X para ser redirecionado a página de Login'
+    const buttonFechar = document.createElement('button')
+    buttonFechar.setAttribute('class', 'btn-close')
+    buttonFechar.setAttribute('data-bs-dismiss', 'alert')
+    buttonFechar.setAttribute('id', 'fecharAlert')
+    
+    
+    alertContaCriada.appendChild(conteudoContaCriada)
+    alertContaCriada.appendChild(conteudoExtra)
+    alertContaCriada.appendChild(buttonFechar)
+    espaco.appendChild(alertContaCriada)
+
+    buttonFechar.addEventListener('click', () => window.location.href = 'index.html' )
 }
 
 

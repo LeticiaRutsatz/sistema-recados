@@ -22,6 +22,19 @@ function loginUsuario(){
         window.location.href = "recados.html"
         return
     }else{
-        alert("Usuário não encontrado, digite seu Login e Senha Corretamente")
+        const espaco = document.getElementById('espacoAlert')
+
+        const alertContaCriada = document.createElement('div')
+        alertContaCriada.setAttribute('class', 'alert alert-danger alert-dismissible fade show')
+        const conteudoContaCriada = document.createElement('strong')
+        conteudoContaCriada.innerText = 'Usuário ou senha incorretos!'
+        const buttonFechar = document.createElement('button')
+        buttonFechar.setAttribute('class', 'btn-close')
+        buttonFechar.setAttribute('data-bs-dismiss', 'alert')
+        buttonFechar.setAttribute('id', 'fecharAlert')
+
+        alertContaCriada.appendChild(conteudoContaCriada)
+        alertContaCriada.appendChild(buttonFechar)
+        espaco.appendChild(alertContaCriada)
     }
 }
