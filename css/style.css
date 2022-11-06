@@ -87,11 +87,8 @@ h1 {
    outline: none;
 }
 
-
-
 .form-control:focus {
     color: #ffffff;
-    background-color: #212529;
     border-color: #ae05c4;
     outline: 0;
     box-shadow: 0 0 0 .15rem #ae05c4;
