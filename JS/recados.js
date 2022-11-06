@@ -57,7 +57,7 @@ function criarRecados(usuariolog){
 
     usuariolog.recados.forEach(dado => {
         const linhaTr = document.createElement('tr')
-        linhaTr.setAttribute('style', 'border: 0.02px solid #d7d7d7;')
+        linhaTr.setAttribute('style', 'border: 0.02px solid #B111A9; color: #ffff')
         linhaTr.setAttribute('id', dado.id)
 
         const idRecado = document.createElement('td')
@@ -71,8 +71,10 @@ function criarRecados(usuariolog){
 
         const botaoEditar = document.createElement('button')
         botaoEditar.setAttribute('type', 'button')
-        botaoEditar.setAttribute('class', 'buttonRecados')
+        botaoEditar.setAttribute('class', 'btn btn-danger btn-sm')
         botaoEditar.innerText = 'Editar'
+
+    
         botaoEditar.addEventListener('click', () => {
             if(botaoEditar.innerText === 'Editar'){
                 editarRecados(dado, botaoEditar, botaoExcluir)
@@ -83,7 +85,7 @@ function criarRecados(usuariolog){
 
         const botaoExcluir = document.createElement('button')
         botaoExcluir.setAttribute('type', 'button')
-        botaoExcluir.setAttribute('class', 'buttonRecados')
+        botaoExcluir.setAttribute('class', 'btn btn-danger btn-sm')
         botaoExcluir.innerText = 'Excluir'
 
         botaoExcluir.addEventListener('click', () => {
@@ -93,7 +95,7 @@ function criarRecados(usuariolog){
                 excluirRecados(dado)
             }
         })
-    
+
         linhaTr.appendChild(idRecado);
         linhaTr.appendChild(descricaoRecado);
         linhaTr.appendChild(detalhamentoRecado);
@@ -107,19 +109,15 @@ function criarRecados(usuariolog){
 
 function editarRecados(dado, editar, excluir){
     editar.innerText = 'Atualizar'
-    editar.setAttribute('style', 'background: #E23C2A')
     
     descricao.value = dado.descricao,
     detalhamento.value = dado.detalhamento
 
     excluir.innerText = 'Cancelar'
-    excluir.setAttribute('style', 'background: #E23C2A')
     
     excluir.addEventListener('click', () => {
         editar.innerText = 'Editar'
-        editar.setAttribute('style', 'background: #F55E08')
         excluir.innerText = 'Excluir'
-        excluir.setAttribute('style', 'background: #F55E08')
     })
 
 }

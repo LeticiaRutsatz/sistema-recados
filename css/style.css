@@ -7,15 +7,10 @@
     box-sizing: border-box;
 }
 
-textarea:focus, input:focus {
-    box-shadow: 0 0 5px 5px  #dddddd;
-    outline: 0;
-}
-
 .body {
-    background: linear-gradient(222.96deg, #CA1154 1.65%, #E23C2A 51.25%, #F55E08 83.75%);   
-    min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #141316;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,31 +18,39 @@ textarea:focus, input:focus {
 }
 
 #bodyRecados {
-    background-color: #f5ecf4;
+    background-color: #141316;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-top: 30px;
-    padding: 30px;
+    padding: 10%;
 }
 
 .container {
-    background-color: #f5ecf4;
+    background-color: #0d0c0f;
     border-radius: 10px;
     padding: 30px;
-    min-height: 40vh;
-    max-height: 50vh;
-    min-width: 35vw;
-    max-width: 50vw;
+    animation: scale-up-center 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.containercadastro {
-    background-color: #f5ecf4;
-    border-radius: 10px;
-    padding: 30px;
-    min-height: 55vh;
-    max-height: 50vh;
-    min-width: 35vw;
-    max-width: 50vw;
-}
+@keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
 
 .form {
     display: flex;
@@ -57,76 +60,104 @@ textarea:focus, input:focus {
 
 h1, h2 {
     margin-bottom:1rem;
-    color: #F55E08;
+    color: #B111A9;
 }
 
-.username{
+h1 {
+    animation: slide-in-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+.username, .password{
+   background-color: #232226 !important;
    padding: 10px;
    margin-bottom: -5px;
+   color: #ffff;
+   border: none;
    outline: none;
 }
 
-.password{
-    padding: 10px;
-    outline: none;
-    margin-bottom: 5px;
-}
 
-#repetpassword{
-    padding: 10px;
-    outline: none;
-    margin-top: -10px;
-}
 
-#descricao{
-    padding: 10px;
-    width: 30vw;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#detalhamento{
-    margin-top: 10px;
-    padding: 10px;
-    width: 55vw;
-    display: flex;
-    display: inline-block;
+.form-control:focus {
+    color: #212529;
+    background-color: #212529;
+    border-color: #ae05c4;
+    outline: 0;
+    box-shadow: 0 0 0 .15rem #ae05c4;
 }
 
 .button {
     padding-top: 10px;
-    background: linear-gradient(222.96deg, #CA1154 1.65%, #E23C2A 51.25%, #F55E08 83.75%);
-    padding: 8px;
+    background: linear-gradient(107.85deg, #ae05c4 7.28%, #d2154e 97.5%);
+    padding: 10px;
     size: 20px;
+    border: none;
     color: #ffff;
     border-radius: 2px;
+    align-items: flex-start;
+    animation: shake-horizontal 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s both;
 }
 
-.buttonRecadosSalvar {
-    padding-top: 10px;
-    background: linear-gradient(222.96deg, #CA1154 1.65%, #E23C2A 51.25%, #F55E08 83.75%);
-    padding: 8px;
-    width: 100px;
+@keyframes shake-horizontal {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+        transform: translateX(10px);
+    }
+    80% {
+        transform: translateX(8px);
+    }
+    90% {
+        transform: translateX(-8px);
+    }
+  }
+
+
+.button:hover{
     color: #ffff;
-    border-radius: 2px;
+    background: linear-gradient(107.85deg, #63056f 7.28%, #780729 97.5%);
 }
 
 .buttonRecadosSair {
-    background: linear-gradient(222.96deg, #CA1154 1.65%, #E23C2A 51.25%, #F55E08 83.75%);
+    background: linear-gradient(107.85deg, #ae05c4 7.28%, #d2154e 97.5%);
     padding: 8px;
-    width: 120px;
     color: #ffff;
-    border-radius: 45px;
-    margin-top: 50px;
+    border-radius: 5vw;
+    min-width: 150px;
+    max-width: 400px;
+    margin-top: 10px;
+    animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.buttonRecados {
-    padding-top: 10px;
-    background: #F55E08;
-    padding: 8px;
-    width: 80px;
-    color: #ffff;
-    border-radius: 2px;
+.btn-danger {
+    background-color: #000000 !important;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 30px;
     margin-left: 5px;
     margin-top: 5px;
 }
@@ -141,23 +172,27 @@ a {
     text-decoration: none;
 }
 
-.table{
-    border-collapse: collapse;
-    margin-top: 30px;
-    width: 95vw;
-}
+a:hover{color:#56081f}
 
 .tr{
-    border: 1.05px solid #e23c2a;
+    border: 0.02px solid #B111A9;
+    background-color: #B111A9;
+    color: #ffff;
 }
 
-th, td{
-    padding: 10px;
+#table {
+    animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-#tbody {
-    padding: 20px;
-    align-items: center;
-    text-align: center;
-    color: rgb(54, 54, 54);
-}
+@keyframes slide-in-bottom {
+    0% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  

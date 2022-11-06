@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="body">
-    <main class="container">
-        <h2>Login</h2>
-        <form id="formularioLogin" class="form">
-            <input type="text" name="user" id="username" class="username" placeholder="Enter your Username" autofocus required oninvalid="this.setCustomValidity('Preencha seu nome')" 
-            onchange="try{setCustomValidity('')}catch(e){}">
+<body class="container-fluid">
+    <main class="row body d-flex justify-content-center">
+        <section class="col-9 col-sm-8 col-md-7 col-lg-6 col-xl-5 col-xxl-6 container">
+            <h2>Login</h2>
+            <form id="formularioLogin" class="form form-label">
+                <input type="text" name="user" id="username" class="username form-control" placeholder="Enter your Username" autofocus required oninvalid="this.setCustomValidity('Preencha seu nome')" 
+                onchange="try{setCustomValidity('')}catch(e){}">
+                <br>
+                <input type="password" name="password" id="password" class="password form-control" placeholder="Enter your Password" required oninvalid="this.setCustomValidity('Preencha sua senha')" 
+                onchange="try{setCustomValidity('')}catch(e){}">
+                <br>
+                <input type="submit" value="Entrar" id="buttonLogin" class="button form-control">
+            </form>
             <br>
-            <input type="password" name="password" id="password" class="password" placeholder="Enter your Password" required oninvalid="this.setCustomValidity('Preencha sua senha')" 
-            onchange="try{setCustomValidity('')}catch(e){}">
-            <br>
-            <input type="submit" value="Entrar" id="buttonLogin" class="button">
-        </form>
-        <br>
-        <a href="./cadastro.html"  rel="Página de Cadastro">Crie sua conta</a>
+            <a href="./cadastro.html"  rel="Página de Cadastro">Crie sua conta</a>
+        </section>
     </main>
     <script src="./JS/login.js"></script>
 </body>
