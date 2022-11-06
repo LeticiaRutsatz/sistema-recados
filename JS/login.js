@@ -25,7 +25,7 @@ function loginUsuario(){
         const espaco = document.getElementById('espacoAlert')
 
         const alertContaCriada = document.createElement('div')
-        alertContaCriada.setAttribute('class', 'alert alert-danger alert-dismissible fade show')
+        alertContaCriada.setAttribute('class', 'alert alert-danger mt-3 alert-dismissible fade show')
         const conteudoContaCriada = document.createElement('strong')
         conteudoContaCriada.innerText = 'Usuário ou senha incorretos!'
         const buttonFechar = document.createElement('button')
@@ -36,5 +36,6 @@ function loginUsuario(){
         alertContaCriada.appendChild(conteudoContaCriada)
         alertContaCriada.appendChild(buttonFechar)
         espaco.appendChild(alertContaCriada)
+        return
     }
 }

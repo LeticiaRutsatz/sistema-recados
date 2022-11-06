@@ -62,7 +62,7 @@ function cadastrarUsuario () {
     const espaco = document.getElementById('espacoAlert')
 
     const alertContaCriada = document.createElement('div')
-    alertContaCriada.setAttribute('class', 'alert alert-success alert-dismissible fade show')
+    alertContaCriada.setAttribute('class', 'alert alert-success mt-3 alert-dismissible fade show')
     const conteudoContaCriada = document.createElement('strong')
     conteudoContaCriada.innerText = 'Conta criada com sucesso!'
     const conteudoExtra = document.createElement('p')
