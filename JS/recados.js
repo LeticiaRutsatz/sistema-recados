@@ -136,7 +136,7 @@ function atualizar(dados, editar, excluir){
     usuarioLogadoOn.recados[indexRecado] = recadoAtualizado
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogadoOn))
 
-    location.reload()
+    criarRecados(usuarioLogadoOn)
 
     editar.innerText = 'Editar'
     excluir.innerText = 'Excluir'
