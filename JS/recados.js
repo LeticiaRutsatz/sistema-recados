@@ -42,7 +42,7 @@ function salvarRecados(){
         detalhamento: detalhamento.value
     }
  
-    usuarioLogadoOn.recados.push(recadoHTML)
+    usuarioLogadoOn.recados.unshift(recadoHTML)
 
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogadoOn))
     criarRecados(usuarioLogadoOn)
